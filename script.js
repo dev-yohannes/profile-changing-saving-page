@@ -1,6 +1,6 @@
-const firstNameInput = document.querySelector("#first-name-input");
+let firstNameInput = document.querySelector("#first-name-input");
 const firstNameSpan = document.querySelector("#first-name-span");
-const lastNameInput = document.querySelector("#last-name-input");
+let lastNameInput = document.querySelector("#last-name-input");
 const lastNameSpan = document.querySelector("#last-name-span");
 const emailInput = document.querySelector("#email-input");
 const emailSpan = document.querySelector("#email-span");
@@ -14,6 +14,17 @@ autofillButton.classList.add("remove-button");
 firstNameSpan.classList.add("remove-span");
 lastNameSpan.classList.add("remove-span");
 emailSpan.classList.add("remove-span");
+
+function savingUserInfo() {
+  localStorage.setItem("firstName", firstNameInput.value);
+  localStorage.setItem("lastName", lastNameInput.value);
+  localStorage.setItem("email", emailInput.value);
+}
+
+window.onload = function () {
+  firstNameInput = localStorage.getItem("firstName");
+  lastNameInput = localStorage.getItem("lastName");
+};
 
 function checking() {
   if (
@@ -54,12 +65,6 @@ function checking() {
   }
 }
 
-function savingUserInfo() {
-  localStorage.setItem("firstName", firstNameInput.value);
-  localStorage.setItem("lastName", lastNameInput.value);
-  localStorage.setItem("email", emailInput.value);
-}
-
 submitButton.addEventListener("click", function () {
   checking();
 });
@@ -92,5 +97,5 @@ clickToEditButton.addEventListener("click", function () {
   submitButton.classList.remove("remove-button");
   cancelButton.classList.remove("remove-button");
 
-  autofillButton.classList.remove("remove-button");
+  //   autofillButton.classList.remove("remove-button");
 });
