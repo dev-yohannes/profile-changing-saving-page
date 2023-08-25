@@ -22,8 +22,9 @@ function savingUserInfo() {
 }
 
 window.onload = function () {
-  firstNameInput = localStorage.getItem("firstName");
-  lastNameInput = localStorage.getItem("lastName");
+  firstNameInput.value = localStorage.getItem("firstName");
+  lastNameInput.value = localStorage.getItem("lastName");
+  emailInput.value = localStorage.getItem("email");
 };
 
 function checking() {
