@@ -1,8 +1,6 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .container div {
   padding: 5px;
@@ -10,4 +8,22 @@
 
 .buttons button {
   padding: 4px 10px;
+}
+
+/* added inside js */
+
+.red-border-input {
+  border: 2px solid red;
+}
+
+.remove-inputs {
+  display: none;
+}
+
+.remove-span {
+  display: none;
+}
+
+.remove-button {
+  display: none;
 }
