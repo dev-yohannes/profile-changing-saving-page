@@ -13,13 +13,7 @@ firstNameSpan.classList.add("remove-span");
 lastNameSpan.classList.add("remove-span");
 emailSpan.classList.add("remove-span");
 
-function savingUserInfo() {
-  localStorage.setItem("firstName", firstNameInput.value);
-  localStorage.setItem("lastName", lastNameInput.value);
-  localStorage.setItem("email", emailInput.value);
-}
-
-submitButton.addEventListener("click", function () {
+function checking() {
   if (
     firstNameInput.value === "" &&
     lastNameInput.value === "" &&
@@ -39,10 +33,7 @@ submitButton.addEventListener("click", function () {
     emailInput.classList.add("red-border-input");
     alert("You need to fill Email field");
   } else {
-    // firstNameInput.classList.remove("red-border-input");
-    // lastNameInput.classList.remove("red-border-input");
-    // emailInput.classList.remove("red-border-input");
-
+    savingUserInfo();
     firstNameInput.classList.add("remove-inputs");
     firstNameSpan.classList.remove("remove-span");
     firstNameSpan.innerHTML = localStorage.getItem("firstName");
@@ -58,6 +49,22 @@ submitButton.addEventListener("click", function () {
     clickToEditButton.classList.remove("remove-button");
     submitButton.classList.add("remove-button");
     cancelButton.classList.add("remove-button");
+  }
+}
+
+function savingUserInfo() {
+  localStorage.setItem("firstName", firstNameInput.value);
+  localStorage.setItem("lastName", lastNameInput.value);
+  localStorage.setItem("email", emailInput.value);
+}
+
+submitButton.addEventListener("click", function () {
+  checking();
+});
+
+document.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    checking();
   }
 });
 
