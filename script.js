@@ -7,8 +7,10 @@ const emailSpan = document.querySelector("#email-span");
 const clickToEditButton = document.querySelector("#click-to-edit");
 const submitButton = document.querySelector("#submit");
 const cancelButton = document.querySelector("#cancel");
+const autofillButton = document.querySelector("#autofill");
 
 clickToEditButton.classList.add("remove-button");
+autofillButton.classList.add("remove-button");
 firstNameSpan.classList.add("remove-span");
 lastNameSpan.classList.add("remove-span");
 emailSpan.classList.add("remove-span");
@@ -89,4 +91,6 @@ clickToEditButton.addEventListener("click", function () {
   clickToEditButton.classList.add("remove-button");
   submitButton.classList.remove("remove-button");
   cancelButton.classList.remove("remove-button");
+
+  autofillButton.classList.remove("remove-button");
 });
