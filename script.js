@@ -69,3 +69,17 @@ cancelButton.addEventListener("click", function () {
   lastNameInput.classList.remove("red-border-input");
   emailInput.classList.remove("red-border-input");
 });
+
+clickToEditButton.addEventListener("click", function () {
+  firstNameSpan.classList.add("remove-span");
+  lastNameSpan.classList.add("remove-span");
+  emailSpan.classList.add("remove-span");
+
+  firstNameInput.classList.remove("remove-inputs");
+  lastNameInput.classList.remove("remove-inputs");
+  emailInput.classList.remove("remove-inputs");
+
+  clickToEditButton.classList.add("remove-button");
+  submitButton.classList.remove("remove-button");
+  cancelButton.classList.remove("remove-button");
+});
